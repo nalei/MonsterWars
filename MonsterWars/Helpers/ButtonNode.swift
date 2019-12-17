@@ -27,7 +27,6 @@ class ButtonNode : SKSpriteNode {
     self.addChild(label)
     
     isUserInteractionEnabled = true
-    
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -42,5 +41,4 @@ class ButtonNode : SKSpriteNode {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
 }

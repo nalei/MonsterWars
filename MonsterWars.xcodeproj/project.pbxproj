@@ -137,10 +137,10 @@
 		1EEEFA1323A81DB1004084D8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1EEEFA1423A81DB1004084D8 /* Constants.swift */,
 				1EEEFA1523A81DB1004084D8 /* ButtonNode.swift */,
-				1EEEFA1623A81DB1004084D8 /* SoundManager.swift */,
 				1EEEFA1723A81DB1004084D8 /* Utils.swift */,
+				1EEEFA1623A81DB1004084D8 /* SoundManager.swift */,
+				1EEEFA1423A81DB1004084D8 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

@@ -13,5 +13,4 @@ class SoundManager {
   let soundSmallHit = SKAction.playSoundFileNamed("smallHit.wav", waitForCompletion: false)
  
   static let sharedInstance = SoundManager()
-
 }
