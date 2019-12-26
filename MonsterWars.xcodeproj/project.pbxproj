@@ -19,6 +19,11 @@
 		1E3A2C3E23A825020016BEA1 /* bigHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E3A2C3223A825020016BEA1 /* bigHit.wav */; };
 		1E3A2C3F23A825020016BEA1 /* Latin_Industries.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E3A2C3323A825020016BEA1 /* Latin_Industries.mp3 */; };
 		1E3A2C4023A825020016BEA1 /* attack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E3A2C3423A825020016BEA1 /* attack.wav */; };
+		1EB5699923B0BBAF00711135 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5699823B0BBAF00711135 /* SpriteComponent.swift */; };
+		1EB5699C23B0E62400711135 /* Castle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5699B23B0E62400711135 /* Castle.swift */; };
+		1EB5699E23B0E7B900711135 /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5699D23B0E7B900711135 /* EntityManager.swift */; };
+		1EE8F4E823B4DF9B00216EDF /* MoveBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F4E723B4DF9B00216EDF /* MoveBehavior.swift */; };
+		1EE8F4EA23B4E16B00216EDF /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8F4E923B4E16B00216EDF /* MoveComponent.swift */; };
 		1EEEF9E223A81D2C004084D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEEF9E123A81D2C004084D8 /* AppDelegate.swift */; };
 		1EEEF9E423A81D2C004084D8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1EEEF9E323A81D2C004084D8 /* GameScene.sks */; };
 		1EEEF9E623A81D2C004084D8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1EEEF9E523A81D2C004084D8 /* Actions.sks */; };
@@ -31,6 +36,9 @@
 		1EEEFA1923A81DB1004084D8 /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEEFA1523A81DB1004084D8 /* ButtonNode.swift */; };
 		1EEEFA1A23A81DB1004084D8 /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEEFA1623A81DB1004084D8 /* SoundManager.swift */; };
 		1EEEFA1B23A81DB1004084D8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EEEFA1723A81DB1004084D8 /* Utils.swift */; };
+		1EF04BF723B0FA42003E24D3 /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF04BF623B0FA42003E24D3 /* PlayerComponent.swift */; };
+		1EF04BF923B1006F003E24D3 /* CastleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF04BF823B1006F003E24D3 /* CastleComponent.swift */; };
+		1EF04BFB23B11639003E24D3 /* Quirk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF04BFA23B11639003E24D3 /* Quirk.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +54,11 @@
 		1E3A2C3223A825020016BEA1 /* bigHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bigHit.wav; sourceTree = "<group>"; };
 		1E3A2C3323A825020016BEA1 /* Latin_Industries.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Latin_Industries.mp3; sourceTree = "<group>"; };
 		1E3A2C3423A825020016BEA1 /* attack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = attack.wav; sourceTree = "<group>"; };
+		1EB5699823B0BBAF00711135 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
+		1EB5699B23B0E62400711135 /* Castle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Castle.swift; sourceTree = "<group>"; };
+		1EB5699D23B0E7B900711135 /* EntityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
+		1EE8F4E723B4DF9B00216EDF /* MoveBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveBehavior.swift; sourceTree = "<group>"; };
+		1EE8F4E923B4E16B00216EDF /* MoveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
 		1EEEF9DE23A81D2C004084D8 /* MonsterWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MonsterWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EEEF9E123A81D2C004084D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EEEF9E323A81D2C004084D8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -60,6 +73,9 @@
 		1EEEFA1523A81DB1004084D8 /* ButtonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		1EEEFA1623A81DB1004084D8 /* SoundManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		1EEEFA1723A81DB1004084D8 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		1EF04BF623B0FA42003E24D3 /* PlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
+		1EF04BF823B1006F003E24D3 /* CastleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleComponent.swift; sourceTree = "<group>"; };
+		1EF04BFA23B11639003E24D3 /* Quirk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quirk.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +108,28 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		1EB5699723B0BB6300711135 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1EB5699823B0BBAF00711135 /* SpriteComponent.swift */,
+				1EF04BF623B0FA42003E24D3 /* PlayerComponent.swift */,
+				1EF04BF823B1006F003E24D3 /* CastleComponent.swift */,
+				1EE8F4E723B4DF9B00216EDF /* MoveBehavior.swift */,
+				1EE8F4E923B4E16B00216EDF /* MoveComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1EB5699A23B0E5F900711135 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				1EB5699D23B0E7B900711135 /* EntityManager.swift */,
+				1EB5699B23B0E62400711135 /* Castle.swift */,
+				1EF04BFA23B11639003E24D3 /* Quirk.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		1EEEF9D523A81D2C004084D8 = {
 			isa = PBXGroup;
 			children = (
@@ -111,9 +149,11 @@
 		1EEEF9E023A81D2C004084D8 /* MonsterWars */ = {
 			isa = PBXGroup;
 			children = (
-				1E3A2C2823A825020016BEA1 /* Sounds */,
+				1EB5699A23B0E5F900711135 /* Entities */,
+				1EB5699723B0BB6300711135 /* Components */,
 				1EEEF9F923A81D7A004084D8 /* Game */,
 				1EEEFA1323A81DB1004084D8 /* Helpers */,
+				1E3A2C2823A825020016BEA1 /* Sounds */,
 				1EEEF9E123A81D2C004084D8 /* AppDelegate.swift */,
 				1EEEF9E523A81D2C004084D8 /* Actions.sks */,
 				1EEEF9EB23A81D2C004084D8 /* Main.storyboard */,
@@ -230,11 +270,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EB5699E23B0E7B900711135 /* EntityManager.swift in Sources */,
+				1EF04BF723B0FA42003E24D3 /* PlayerComponent.swift in Sources */,
+				1EE8F4E823B4DF9B00216EDF /* MoveBehavior.swift in Sources */,
 				1EEEF9E823A81D2C004084D8 /* GameScene.swift in Sources */,
 				1EEEF9EA23A81D2C004084D8 /* GameViewController.swift in Sources */,
+				1EB5699923B0BBAF00711135 /* SpriteComponent.swift in Sources */,
 				1EEEF9E223A81D2C004084D8 /* AppDelegate.swift in Sources */,
 				1EEEFA1B23A81DB1004084D8 /* Utils.swift in Sources */,
+				1EF04BF923B1006F003E24D3 /* CastleComponent.swift in Sources */,
+				1EF04BFB23B11639003E24D3 /* Quirk.swift in Sources */,
 				1EEEFA1823A81DB1004084D8 /* Constants.swift in Sources */,
+				1EE8F4EA23B4E16B00216EDF /* MoveComponent.swift in Sources */,
+				1EB5699C23B0E62400711135 /* Castle.swift in Sources */,
 				1EEEFA1923A81DB1004084D8 /* ButtonNode.swift in Sources */,
 				1EEEFA1A23A81DB1004084D8 /* SoundManager.swift in Sources */,
 			);

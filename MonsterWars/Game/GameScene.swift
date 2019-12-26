@@ -26,17 +26,15 @@ class GameScene: SKScene {
   // Music
   var backgroundMusic: SKAudioNode!
   
+  // Entity manager
+  var entityManager: EntityManager!
+  
   override func sceneDidLoad() {
     
     // Start background music
-    if let musicURL = Bundle.main.url(forResource: "Latin_Industries", withExtension: "mp3") {
-      backgroundMusic = SKAudioNode(url: musicURL)
-      addChild(backgroundMusic)
-    }
-    
-//    let bgMusic = SKAudioNode(fileNamed: "Latin_Industries.mp3")
-//    bgMusic.autoplayLooped = true
-//    addChild(bgMusic)
+    // let bgMusic = SKAudioNode(fileNamed: "Latin_Industries.mp3")
+    // bgMusic.autoplayLooped = true
+    // addChild(bgMusic)
     
     // Add background
     let background = SKSpriteNode(imageNamed: "background")
@@ -85,10 +83,51 @@ class GameScene: SKScene {
     coin2Label.verticalAlignmentMode = .center
     coin2Label.text = "10"
     self.addChild(coin2Label)
+    
+    
+    // MARK: - Game logic
+    
+    // Creare instance of Entity manager
+    entityManager = EntityManager(scene: self)
+
+    // Creare instance of Castle entity (human player)
+    let humanCastle = Castle(imageName: "munch1", player: .player1, entityManager: entityManager)
+    if let spriteComponent = humanCastle.component(ofType: SpriteComponent.self) {
+      spriteComponent.node.position = CGPoint(x: spriteComponent.node.size.width/2, y: size.height/2)
+    }
+    entityManager.add(humanCastle)
+
+    // Creare instance of Castle entity (AI player)
+    let aiCastle = Castle(imageName: "munch2", player: .player2, entityManager: entityManager)
+    if let spriteComponent = aiCastle.component(ofType: SpriteComponent.self) {
+      spriteComponent.node.position = CGPoint(x: size.width - spriteComponent.node.size.width/2, y: size.height/2)
+    }
+    entityManager.add(aiCastle)
+  }
+  
+  override func update(_ currentTime: TimeInterval) {
+    if gameOver {
+      return
+    }
+    
+    let deltaTime = currentTime - lastUpdateTimeInterval
+    lastUpdateTimeInterval = currentTime
+    
+    entityManager.update(deltaTime)
+    
+    if let human = entityManager.getCastle(for: .player1),
+      let humanCastle = human.component(ofType: CastleComponent.self) {
+      coin1Label.text = "\(humanCastle.coins)"
+    }
+    
+    if let ai = entityManager.getCastle(for: .player2),
+      let aiCastle = ai.component(ofType: CastleComponent.self) {
+      coin2Label.text = "\(aiCastle.coins)"
+    }
   }
   
   func quirkPressed() {
-    print("Quirk pressed!")
+    entityManager.spawnQuirk(player: .player1)
   }
   
   func zapPressed() {
@@ -132,11 +171,5 @@ class GameScene: SKScene {
     let scaleAction = SKAction.scale(to: 1.0, duration: 0.5)
     scaleAction.timingMode = SKActionTimingMode.easeInEaseOut
     label.run(scaleAction)
-  }
-  
-  override func update(_ currentTime: TimeInterval) {
-    if gameOver {
-      return
-    }
   }
 }

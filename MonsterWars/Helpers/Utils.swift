@@ -107,16 +107,17 @@ extension CGFloat {
   }
 }
 
-// MARK: Points and vectors
+// MARK: - Points and vectors
+
 extension CGPoint {
-  init(_ point: float2) {
+  init(_ point: simd_float2) {
     self.init()
     x = CGFloat(point.x)
     y = CGFloat(point.y)
   }
 }
 
-extension float2 {
+extension simd_float2 {
   init(_ point: CGPoint) {
     self.init(x: Float(point.x), y: Float(point.y))
   }
