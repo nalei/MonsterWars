@@ -103,35 +103,15 @@ class GameScene: SKScene {
       spriteComponent.node.position = CGPoint(x: size.width - spriteComponent.node.size.width/2, y: size.height/2)
     }
     entityManager.add(aiCastle)
-  }
-  
-  override func update(_ currentTime: TimeInterval) {
-    if gameOver {
-      return
-    }
     
-    let deltaTime = currentTime - lastUpdateTimeInterval
-    lastUpdateTimeInterval = currentTime
-    
-    entityManager.update(deltaTime)
-    
-    if let human = entityManager.getCastle(for: .player1),
-      let humanCastle = human.component(ofType: CastleComponent.self) {
-      coin1Label.text = "\(humanCastle.coins)"
-    }
-    
-    if let ai = entityManager.getCastle(for: .player2),
-      let aiCastle = ai.component(ofType: CastleComponent.self) {
-      coin2Label.text = "\(aiCastle.coins)"
-    }
   }
   
   func quirkPressed() {
-    entityManager.spawnQuirk(player: .player1)
+    entityManager.spawnQuirk(.player1)
   }
   
   func zapPressed() {
-    print("Zap pressed!")
+     entityManager.spawnZap(.player1)
   }
   
   func munchPressed() {
@@ -172,4 +152,26 @@ class GameScene: SKScene {
     scaleAction.timingMode = SKActionTimingMode.easeInEaseOut
     label.run(scaleAction)
   }
+  
+  override func update(_ currentTime: TimeInterval) {
+    let deltaTime = currentTime - lastUpdateTimeInterval
+    lastUpdateTimeInterval = currentTime
+    
+    if gameOver {
+      return
+    }
+    
+    entityManager.update(deltaTime)
+    
+    if let human = entityManager.castleForPlayer(.player1),
+      let humanCastle = human.component(ofType: CastleComponent.self) {
+      coin1Label.text = "\(humanCastle.coins)"
+    }
+    
+    if let ai = entityManager.castleForPlayer(.player2),
+      let aiCastle = ai.component(ofType: CastleComponent.self) {
+      coin2Label.text = "\(aiCastle.coins)"
+    }
+  }
+  
 }

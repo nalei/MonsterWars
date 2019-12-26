@@ -38,11 +38,11 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
   }
   
   /// Поиск ближайшего MoveComponent среди компонентов конкретного игрока
-  func closestMoveComponent(for player: Player) -> GKAgent2D? {
+  func closestMoveComponentForPlayer(_ player: Player) -> GKAgent2D? {
     var closestMoveComponent: MoveComponent? = nil
     var closestDistance = CGFloat(0)
 
-    let enemyMoveComponents = entityManager.moveComponents(for: player)
+    let enemyMoveComponents = entityManager.moveComponentsForPlayer(player)
     for enemyMoveComponent in enemyMoveComponents {
       let distance = (CGPoint(enemyMoveComponent.position) - CGPoint(position)).length()
       if closestMoveComponent == nil || distance < closestDistance {
@@ -62,14 +62,16 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
     }
 
     // Ближайший MoveComponent оппонента
-    guard let enemyMoveComponent = closestMoveComponent(for: playerComponent.player.opponent) else {
+    guard let enemyMoveComponent = closestMoveComponentForPlayer(playerComponent.player.opponent) else {
       return
     }
 
     // Все MoveComponent союзников
-    let alliedMoveComponents = entityManager.moveComponents(for: playerComponent.player)
+    let alliedMoveComponents = entityManager.moveComponentsForPlayer(playerComponent.player)
 
     // Поведение
     behavior = MoveBehavior(targetSpeed: maxSpeed, seek: enemyMoveComponent, avoid: alliedMoveComponents)
   }
+  
+  
 }

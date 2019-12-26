@@ -6,7 +6,7 @@ class Quirk: GKEntity {
   init(player: Player, entityManager: EntityManager) {
     super.init()
     let texture = SKTexture(imageNamed: "quirk\(player.rawValue)")
-    addComponent(SpriteComponent(texture: texture))
+    addComponent(SpriteComponent(texture: texture, size: texture.size()))
     addComponent(PlayerComponent(player: player))
     addComponent(MoveComponent(maxSpeed: 150, maxAcceleration: 5, radius: Float(texture.size().width * 0.3), entityManager: entityManager))
   }

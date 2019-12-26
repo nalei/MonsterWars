@@ -6,7 +6,7 @@ class Castle: GKEntity {
   init(imageName: String, player: Player, entityManager: EntityManager) {
     super.init()
     let texture = SKTexture(imageNamed: imageName)
-    let spriteComponent = SpriteComponent(texture: texture)
+    let spriteComponent = SpriteComponent(texture: texture, size: texture.size())
     addComponent(spriteComponent)
     addComponent(PlayerComponent(player: player))
     addComponent(CastleComponent ())
