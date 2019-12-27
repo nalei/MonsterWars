@@ -19,6 +19,11 @@
 		1E3A2C3E23A825020016BEA1 /* bigHit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E3A2C3223A825020016BEA1 /* bigHit.wav */; };
 		1E3A2C3F23A825020016BEA1 /* Latin_Industries.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E3A2C3323A825020016BEA1 /* Latin_Industries.mp3 */; };
 		1E3A2C4023A825020016BEA1 /* attack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E3A2C3423A825020016BEA1 /* attack.wav */; };
+		1E4A698323B6169C00FAAEEC /* HealthComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4A698223B6169C00FAAEEC /* HealthComponent.swift */; };
+		1E4A698523B6192C00FAAEEC /* FiringComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4A698423B6192C00FAAEEC /* FiringComponent.swift */; };
+		1E4A698723B61B2400FAAEEC /* Laser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4A698623B61B2400FAAEEC /* Laser.swift */; };
+		1E4A698923B6381100FAAEEC /* AIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4A698823B6381100FAAEEC /* AIComponent.swift */; };
+		1E4A698B23B64F7900FAAEEC /* MeleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4A698A23B64F7900FAAEEC /* MeleComponent.swift */; };
 		1EB5699923B0BBAF00711135 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5699823B0BBAF00711135 /* SpriteComponent.swift */; };
 		1EB5699C23B0E62400711135 /* Castle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5699B23B0E62400711135 /* Castle.swift */; };
 		1EB5699E23B0E7B900711135 /* EntityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5699D23B0E7B900711135 /* EntityManager.swift */; };
@@ -55,6 +60,11 @@
 		1E3A2C3223A825020016BEA1 /* bigHit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bigHit.wav; sourceTree = "<group>"; };
 		1E3A2C3323A825020016BEA1 /* Latin_Industries.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Latin_Industries.mp3; sourceTree = "<group>"; };
 		1E3A2C3423A825020016BEA1 /* attack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = attack.wav; sourceTree = "<group>"; };
+		1E4A698223B6169C00FAAEEC /* HealthComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthComponent.swift; sourceTree = "<group>"; };
+		1E4A698423B6192C00FAAEEC /* FiringComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiringComponent.swift; sourceTree = "<group>"; };
+		1E4A698623B61B2400FAAEEC /* Laser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Laser.swift; sourceTree = "<group>"; };
+		1E4A698823B6381100FAAEEC /* AIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIComponent.swift; sourceTree = "<group>"; };
+		1E4A698A23B64F7900FAAEEC /* MeleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeleComponent.swift; sourceTree = "<group>"; };
 		1EB5699823B0BBAF00711135 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		1EB5699B23B0E62400711135 /* Castle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Castle.swift; sourceTree = "<group>"; };
 		1EB5699D23B0E7B900711135 /* EntityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityManager.swift; sourceTree = "<group>"; };
@@ -118,6 +128,10 @@
 				1EF04BF823B1006F003E24D3 /* CastleComponent.swift */,
 				1EE8F4E723B4DF9B00216EDF /* MoveBehavior.swift */,
 				1EE8F4E923B4E16B00216EDF /* MoveComponent.swift */,
+				1E4A698223B6169C00FAAEEC /* HealthComponent.swift */,
+				1E4A698423B6192C00FAAEEC /* FiringComponent.swift */,
+				1E4A698823B6381100FAAEEC /* AIComponent.swift */,
+				1E4A698A23B64F7900FAAEEC /* MeleComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -129,6 +143,7 @@
 				1EB5699B23B0E62400711135 /* Castle.swift */,
 				1EF04BFA23B11639003E24D3 /* Quirk.swift */,
 				1EE0831123B50DB800A94D06 /* Zap.swift */,
+				1E4A698623B61B2400FAAEEC /* Laser.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -274,16 +289,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EB5699E23B0E7B900711135 /* EntityManager.swift in Sources */,
+				1E4A698923B6381100FAAEEC /* AIComponent.swift in Sources */,
 				1EF04BF723B0FA42003E24D3 /* PlayerComponent.swift in Sources */,
+				1E4A698B23B64F7900FAAEEC /* MeleComponent.swift in Sources */,
 				1EE8F4E823B4DF9B00216EDF /* MoveBehavior.swift in Sources */,
 				1EEEF9E823A81D2C004084D8 /* GameScene.swift in Sources */,
 				1EEEF9EA23A81D2C004084D8 /* GameViewController.swift in Sources */,
+				1E4A698523B6192C00FAAEEC /* FiringComponent.swift in Sources */,
 				1EB5699923B0BBAF00711135 /* SpriteComponent.swift in Sources */,
 				1EEEF9E223A81D2C004084D8 /* AppDelegate.swift in Sources */,
 				1EEEFA1B23A81DB1004084D8 /* Utils.swift in Sources */,
 				1EF04BF923B1006F003E24D3 /* CastleComponent.swift in Sources */,
 				1EF04BFB23B11639003E24D3 /* Quirk.swift in Sources */,
+				1E4A698723B61B2400FAAEEC /* Laser.swift in Sources */,
 				1EEEFA1823A81DB1004084D8 /* Constants.swift in Sources */,
+				1E4A698323B6169C00FAAEEC /* HealthComponent.swift in Sources */,
 				1EE8F4EA23B4E16B00216EDF /* MoveComponent.swift in Sources */,
 				1EB5699C23B0E62400711135 /* Castle.swift in Sources */,
 				1EEEFA1923A81DB1004084D8 /* ButtonNode.swift in Sources */,

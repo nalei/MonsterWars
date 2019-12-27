@@ -8,9 +8,11 @@ class EntityManager {
   var toRemove = Set<GKEntity>()
   
   lazy var componentSystems: [GKComponentSystem] = {
-    let castleSystem = GKComponentSystem(componentClass: CastleComponent.self)
     let moveSystem = GKComponentSystem(componentClass: MoveComponent.self)
-    return [castleSystem, moveSystem]
+    let castleSystem = GKComponentSystem(componentClass: CastleComponent.self)
+    let meleeSystem = GKComponentSystem(componentClass: MeleeComponent.self)
+    let firingSystem = GKComponentSystem(componentClass: FiringComponent.self)
+    return [moveSystem, castleSystem, meleeSystem, firingSystem]
   }()
   
   init(scene: SKScene) {
@@ -33,11 +35,11 @@ class EntityManager {
     if let spriteNode = entity.component(ofType: SpriteComponent.self)?.node {
       spriteNode.removeFromParent()
     }
-
+    
     entities.remove(entity)
     toRemove.insert(entity)
   }
-
+  
   /// Возвращает CastleComponent для конкретного игрока
   func castleForPlayer(_ player: Player) -> GKEntity? {
     for entity in entities {
@@ -130,5 +132,4 @@ class EntityManager {
     }
     add(monster)
   }
-  
 }
