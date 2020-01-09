@@ -102,8 +102,8 @@ class GameScene: SKScene {
     if let spriteComponent = aiCastle.component(ofType: SpriteComponent.self) {
       spriteComponent.node.position = CGPoint(x: size.width - spriteComponent.node.size.width/2, y: size.height/2)
     }
+    aiCastle.addComponent(AiComponent(entityManager: entityManager))
     entityManager.add(aiCastle)
-    
   }
   
   func quirkPressed() {
@@ -115,7 +115,7 @@ class GameScene: SKScene {
   }
   
   func munchPressed() {
-    print("Munch pressed!")
+    entityManager.spawnMunch(.player1)
   }
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -140,9 +140,9 @@ class GameScene: SKScene {
     
     let label = SKLabelNode(fontNamed: "Courier-Bold")
     label.fontSize = 100
-    label.fontColor = SKColor.black
+    label.fontColor = SKColor.white
     label.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
-    label.zPosition = 1
+    label.zPosition = 2
     label.verticalAlignmentMode = .center
     label.text = message
     label.setScale(0)
@@ -154,24 +154,34 @@ class GameScene: SKScene {
   }
   
   override func update(_ currentTime: TimeInterval) {
+
     let deltaTime = currentTime - lastUpdateTimeInterval
     lastUpdateTimeInterval = currentTime
     
     if gameOver {
       return
     }
-    
+
     entityManager.update(deltaTime)
     
+    // Check for game over
     if let human = entityManager.castleForPlayer(.player1),
-      let humanCastle = human.component(ofType: CastleComponent.self) {
+           let humanCastle = human.component(ofType: CastleComponent.self),
+           let humanHealth = human.component(ofType: HealthComponent.self) {
+      if (humanHealth.health <= 0) {
+        showRestartMenu(false)
+      }
       coin1Label.text = "\(humanCastle.coins)"
     }
-    
     if let ai = entityManager.castleForPlayer(.player2),
-      let aiCastle = ai.component(ofType: CastleComponent.self) {
+           let aiCastle = ai.component(ofType: CastleComponent.self),
+           let aiHealth = ai.component(ofType: HealthComponent.self) {
+      if (aiHealth.health <= 0) {
+        showRestartMenu(true)
+      }
       coin2Label.text = "\(aiCastle.coins)"
     }
+    
   }
   
 }

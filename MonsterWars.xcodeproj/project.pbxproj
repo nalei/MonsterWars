@@ -45,6 +45,7 @@
 		1EF04BF723B0FA42003E24D3 /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF04BF623B0FA42003E24D3 /* PlayerComponent.swift */; };
 		1EF04BF923B1006F003E24D3 /* CastleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF04BF823B1006F003E24D3 /* CastleComponent.swift */; };
 		1EF04BFB23B11639003E24D3 /* Quirk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF04BFA23B11639003E24D3 /* Quirk.swift */; };
+		1EF41BA923C7875A0087FF8C /* Mynch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF41BA823C7875A0087FF8C /* Mynch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		1EF04BF623B0FA42003E24D3 /* PlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		1EF04BF823B1006F003E24D3 /* CastleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastleComponent.swift; sourceTree = "<group>"; };
 		1EF04BFA23B11639003E24D3 /* Quirk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quirk.swift; sourceTree = "<group>"; };
+		1EF41BA823C7875A0087FF8C /* Mynch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mynch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				1EF04BFA23B11639003E24D3 /* Quirk.swift */,
 				1EE0831123B50DB800A94D06 /* Zap.swift */,
 				1E4A698623B61B2400FAAEEC /* Laser.swift */,
+				1EF41BA823C7875A0087FF8C /* Mynch.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				1EEEF9EA23A81D2C004084D8 /* GameViewController.swift in Sources */,
 				1E4A698523B6192C00FAAEEC /* FiringComponent.swift in Sources */,
 				1EB5699923B0BBAF00711135 /* SpriteComponent.swift in Sources */,
+				1EF41BA923C7875A0087FF8C /* Mynch.swift in Sources */,
 				1EEEF9E223A81D2C004084D8 /* AppDelegate.swift in Sources */,
 				1EEEFA1B23A81DB1004084D8 /* Utils.swift in Sources */,
 				1EF04BF923B1006F003E24D3 /* CastleComponent.swift in Sources */,

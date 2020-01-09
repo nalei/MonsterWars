@@ -37,5 +37,9 @@ class AiComponent: GKComponent {
       entityManager.spawnZap(playerComponent.player)
       nextMonster = MonsterType.allValues[Int(arc4random()) % MonsterType.allValues.count]
     }
+    if nextMonster == .munch && castleComponent.coins >= costMunch {
+      entityManager.spawnMunch(playerComponent.player)
+      nextMonster = MonsterType.allValues[Int(arc4random()) % MonsterType.allValues.count]
+    }
   }
 }
