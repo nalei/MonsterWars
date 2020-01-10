@@ -2,6 +2,7 @@ import SpriteKit
 import GameplayKit
 
 class CastleComponent: GKComponent {
+  var attacking = true
   var coins = 0
   var lastCoinDrop = TimeInterval(0)
   

@@ -19,9 +19,9 @@ class FiringComponent: GKComponent {
     self.entityManager = entityManager
     super.init()
   }
-
+  
   required init?(coder aDecoder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
+    fatalError("init(coder:) has not been implemented")
   }
   
   override func update(deltaTime seconds: TimeInterval) {
@@ -45,7 +45,7 @@ class FiringComponent: GKComponent {
       let distance = (spriteComponent.node.position - enemySpriteComponent.node.position).length()
       let wiggleRoom = CGFloat(5)
       if (CGFloat(abs(distance)) <= range + wiggleRoom && CGFloat(CACurrentMediaTime() - lastDamageTime) > damageRate) {
-      
+        
         spriteComponent.node.parent?.run(sound)
         lastDamageTime = CACurrentMediaTime()
         

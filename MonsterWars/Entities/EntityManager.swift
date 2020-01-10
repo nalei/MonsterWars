@@ -41,7 +41,7 @@ class EntityManager {
     toRemove.insert(entity)
   }
   
-  /// Возвращает CastleComponent для конкретного игрока
+  /// Возвращает Castle entity для конкретного игрока
   func castleForPlayer(_ player: Player) -> GKEntity? {
     for entity in entities {
       if let playerComponent = entity.component(ofType: PlayerComponent.self), let _ = entity.component(ofType: CastleComponent.self) {
@@ -114,9 +114,9 @@ class EntityManager {
   
   func spawnZap(_ player: Player) {
     guard let teamEntity = castleForPlayer(player),
-          let teamCastleComponent = teamEntity.component(ofType: CastleComponent.self),
-          let teamSpriteComponent = teamEntity.component(ofType: SpriteComponent.self) else {
-      return
+      let teamCastleComponent = teamEntity.component(ofType: CastleComponent.self),
+      let teamSpriteComponent = teamEntity.component(ofType: SpriteComponent.self) else {
+        return
     }
     
     if teamCastleComponent.coins < costZap {
@@ -136,9 +136,9 @@ class EntityManager {
   
   func spawnMunch(_ player: Player) {
     guard let teamEntity = castleForPlayer(player),
-          let teamCastleComponent = teamEntity.component(ofType: CastleComponent.self),
-          let teamSpriteComponent = teamEntity.component(ofType: SpriteComponent.self) else {
-      return
+      let teamCastleComponent = teamEntity.component(ofType: CastleComponent.self),
+      let teamSpriteComponent = teamEntity.component(ofType: SpriteComponent.self) else {
+        return
     }
     
     if teamCastleComponent.coins < costMunch {

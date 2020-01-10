@@ -4,9 +4,9 @@ enum MonsterType {
   case quirk
   case zap
   case munch
-
+  
   static let allValues = [quirk, zap, munch]
-
+  
 }
 
 class AiComponent: GKComponent {
@@ -19,14 +19,14 @@ class AiComponent: GKComponent {
   }
   
   required init?(coder aDecoder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
+    fatalError("init(coder:) has not been implemented")
   }
   
   override func update(deltaTime seconds: TimeInterval) {
     // Get required components
     guard let playerComponent = entity?.component(ofType: PlayerComponent.self),
-              let castleComponent = entity?.component(ofType: CastleComponent.self) else {
-      return
+      let castleComponent = entity?.component(ofType: CastleComponent.self) else {
+        return
     }
     
     if nextMonster == .quirk && castleComponent.coins >= costQuirk {

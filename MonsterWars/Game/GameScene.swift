@@ -14,6 +14,7 @@ class GameScene: SKScene {
   var munchButton: ButtonNode!
   
   // Labels
+  let stateLabel = SKLabelNode(fontNamed: "Courier-Bold")
   let coin1Label = SKLabelNode(fontNamed: "Courier-Bold")
   let coin2Label = SKLabelNode(fontNamed: "Courier-Bold")
   
@@ -126,7 +127,12 @@ class GameScene: SKScene {
     let touchLocation = touch.location(in: self)
     print("\(touchLocation)")
     
-    if gameOver {}
+    if gameOver {
+      let newScene = GameScene(size: size)
+      newScene.scaleMode = scaleMode
+      view?.presentScene(newScene, transition: SKTransition.flipHorizontal(withDuration: 0.5))
+      return
+    }
   }
   
   func showRestartMenu(_ won: Bool) {
@@ -140,7 +146,7 @@ class GameScene: SKScene {
     
     let label = SKLabelNode(fontNamed: "Courier-Bold")
     label.fontSize = 100
-    label.fontColor = SKColor.white
+    label.fontColor = SKColor.black
     label.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
     label.zPosition = 2
     label.verticalAlignmentMode = .center
@@ -183,5 +189,4 @@ class GameScene: SKScene {
     }
     
   }
-  
 }

@@ -3,7 +3,7 @@ import GameplayKit
 
 class MoveComponent: GKAgent2D, GKAgentDelegate {
   let entityManager: EntityManager
-
+  
   init(maxSpeed: Float, maxAcceleration: Float, radius: Float, entityManager: EntityManager) {
     self.entityManager = entityManager
     super.init()
@@ -18,13 +18,13 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-
+  
   /// Прежде чем агент обновит позицию, устанавливаем агента в позицию спрайта
   func agentWillUpdate(_ agent: GKAgent) {
     guard let spriteComponent = entity?.component(ofType: SpriteComponent.self) else {
       return
     }
-
+    
     position = simd_float2(spriteComponent.node.position)
   }
   
@@ -33,7 +33,7 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
     guard let spriteComponent = entity?.component(ofType: SpriteComponent.self) else {
       return
     }
-
+    
     spriteComponent.node.position = CGPoint(position)
   }
   
@@ -41,7 +41,7 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
   func closestMoveComponentForPlayer(_ player: Player) -> GKAgent2D? {
     var closestMoveComponent: MoveComponent? = nil
     var closestDistance = CGFloat(0)
-
+    
     let enemyMoveComponents = entityManager.moveComponentsForPlayer(player)
     for enemyMoveComponent in enemyMoveComponents {
       let distance = (CGPoint(enemyMoveComponent.position) - CGPoint(position)).length()
@@ -55,23 +55,21 @@ class MoveComponent: GKAgent2D, GKAgentDelegate {
   
   override func update(deltaTime seconds: TimeInterval) {
     super.update(deltaTime: seconds)
-
+    
     // PlayerComponent для текущего объекта
     guard let entity = entity, let playerComponent = entity.component(ofType: PlayerComponent.self) else {
-        return
+      return
     }
-
+    
     // Ближайший MoveComponent оппонента
     guard let enemyMoveComponent = closestMoveComponentForPlayer(playerComponent.player.opponent) else {
       return
     }
-
+    
     // Все MoveComponent союзников
     let alliedMoveComponents = entityManager.moveComponentsForPlayer(playerComponent.player)
-
+    
     // Поведение
     behavior = MoveBehavior(targetSpeed: maxSpeed, seek: enemyMoveComponent, avoid: alliedMoveComponents)
   }
-  
-  
 }

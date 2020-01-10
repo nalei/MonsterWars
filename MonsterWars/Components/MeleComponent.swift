@@ -23,7 +23,7 @@ class MeleeComponent: GKComponent {
   }
   
   required init?(coder aDecoder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
+    fatalError("init(coder:) has not been implemented")
   }
   
   override func update(deltaTime seconds: TimeInterval) {
@@ -32,8 +32,8 @@ class MeleeComponent: GKComponent {
     
     // Get required components
     guard let playerComponent = entity?.component(ofType: PlayerComponent.self),
-              let spriteComponent = entity?.component(ofType: SpriteComponent.self) else {
-      return
+      let spriteComponent = entity?.component(ofType: SpriteComponent.self) else {
+        return
     }
     
     // Loop through enemy entities
@@ -43,8 +43,8 @@ class MeleeComponent: GKComponent {
       
       // Get required components
       guard let enemySpriteComponent = enemyEntity.component(ofType: SpriteComponent.self),
-            let enemyHealthComponent = enemyEntity.component(ofType: HealthComponent.self) else {
-        continue
+        let enemyHealthComponent = enemyEntity.component(ofType: HealthComponent.self) else {
+          continue
       }
       
       // Check for intersection
