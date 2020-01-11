@@ -94,14 +94,14 @@ class GameScene: SKScene {
     // Creare instance of Castle entity (human player)
     let humanCastle = Castle(imageName: "munch1", player: .player1, entityManager: entityManager)
     if let spriteComponent = humanCastle.component(ofType: SpriteComponent.self) {
-      spriteComponent.node.position = CGPoint(x: spriteComponent.node.size.width/2, y: size.height/2)
+      spriteComponent.node.position = CGPoint(x: spriteComponent.node.size.width/2 + 20, y: size.height/2)
     }
     entityManager.add(humanCastle)
 
     // Creare instance of Castle entity (AI player)
     let aiCastle = Castle(imageName: "munch2", player: .player2, entityManager: entityManager)
     if let spriteComponent = aiCastle.component(ofType: SpriteComponent.self) {
-      spriteComponent.node.position = CGPoint(x: size.width - spriteComponent.node.size.width/2, y: size.height/2)
+      spriteComponent.node.position = CGPoint(x: size.width - spriteComponent.node.size.width/2 - 20, y: size.height/2)
     }
     aiCastle.addComponent(AiComponent(entityManager: entityManager))
     entityManager.add(aiCastle)
